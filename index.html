@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad Lib Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1 style="text-align: center;">Mad Lib Game</h1>
+    <form action="/" method="post">
+        <label for="personName">Person's Name:</label>
+        <input type="text" id="personName" name="personName" required>
+
+        <label for="pluralNoun1">Plural Noun:</label>
+        <input type="text" id="pluralNoun1" name="pluralNoun1" required>
+
+        <label for="adjective">Adjective:</label>
+        <input type="text" id="adjective" name="adjective" required>
+
+        <label for="pluralNoun2">Another Plural Noun:</label>
+        <input type="text" id="pluralNoun2" name="pluralNoun2" required>
+
+        <label for="pluralNoun3">Another Plural Noun:</label>
+        <input type="text" id="pluralNoun3" name="pluralNoun3" required>
+
+        <button type="submit">Generate Mad Lib</button>
+    </form>
+
+    <footer>
+        <p>
+            This code sets up a simple web server using Node.js and Express, creating a Mad Libs game.
+            <br><br>
+            <strong>Dependencies:</strong> The code uses two Node.js packages, <code>express</code> for creating a web server and <code>body-parser</code> for handling form data.
+            <br><br>
+            <strong>Server Setup:</strong> It creates an instance of the Express application (<code>app</code>) and sets the port to 8080.
+            <br><br>
+            <strong>Middleware Setup:</strong>
+            <ul>
+              <li>It uses <code>body-parser</code> to parse incoming form data.</li>
+              <li>It serves static files from the 'public' directory, allowing access to CSS, images, etc.</li>
+              <li>It serves static files from the root directory (<code>__dirname</code>).</li>
+            </ul>
+            <br>
+            <strong>Routes:</strong>
+            <ul>
+              <li>There's a route for handling HTTP GET requests to the root URL (<code>/</code>). It sends the 'index.html' file when someone accesses the root.</li>
+              <li>There's also a route for handling HTTP POST requests to the root URL (<code>/</code>). It takes data from a submitted form (personName, pluralNoun1, adjective, and pluralNoun2), constructs a Mad Lib story, and then sends back an HTML page displaying the result.</li>
+            </ul>
+            <br>
+            <strong>Mad Lib Story Construction:</strong> The Mad Lib story is constructed using the form data submitted in the POST request.
+            <br><br>
+            <strong>HTML Response:</strong>
+            <ul>
+              <li>The response to the POST request is an HTML page with the constructed Mad Lib story displayed in a styled container.</li>
+              <li>There's a "Back to Form" button that links back to the form.</li>
+            </ul>
+            <br>
+            <strong>Styling:</strong> The HTML page includes some basic styling using inline CSS to make it visually appealing.
+            <br><br>
+            <strong>Server Start:</strong> The server listens on port 8080, and a message is logged to the console when the server starts.
+          </p>
+          
+    </footer>
+
+    <div id="madLibResult"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
